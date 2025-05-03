@@ -25,3 +25,13 @@
 .read-the-docs {
   color: #888;
 }
+.toggleTheme-btn{
+  margin-top: 10px;
+  border: none;
+  background-color: purple;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 13px;
+  cursor: pointer;
+}
