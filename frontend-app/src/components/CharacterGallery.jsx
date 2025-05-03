@@ -1,12 +1,14 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../style/CharacterGallery.module.css";
+import { themeContext } from "../context/ThemeContextProvider";
 
 const CharacterGallery = () => {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
   const [info, setInfo] = useState({});
+  const context=useContext(themeContext);
 
   const getData=async()=>{
     try {
@@ -25,19 +27,23 @@ const CharacterGallery = () => {
   useEffect(() => {
     getData();
   }, [page]);
-
+const bg = context?.theme?.backGroundColor || "white";
   return (
     <div>
-      <h2>Character Gallery</h2>
+      <h2
+        className={bg=="black"? styles.whiteHeader:""}
+      >
+        Character Gallery
+      </h2>
       <div className={styles.gridContainer}>
         {characters.map((character) => (
           <div key={character.id} className={styles.card}>
-              <img src={character.image} alt={character.name} />
-              <h3 className={styles.text}>{character.name}</h3>
-              <div className={styles.text}>Species: {character.species}</div>
-              <div className={styles.text}>Status: {character.status}</div>
+            <img src={character.image} alt={character.name} />
+            <h3 className={styles.text}>{character.name}</h3>
+            <div className={styles.text}>Species: {character.species}</div>
+            <div className={styles.text}>Status: {character.status}</div>
             <Link to={`/character/${character.id}`} target="_blank">
-            view details
+              view details
             </Link>
           </div>
         ))}

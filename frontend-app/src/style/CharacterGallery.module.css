@@ -59,5 +59,7 @@
   background-color: #aaa;
   cursor: not-allowed;
 }
-
+.whiteHeader{
+  color: #fff;
+}
 
