@@ -28,15 +28,16 @@ const CharacterGallery = () => {
 
   return (
     <div>
-    <h2>Welcome to Character-Gallery</h2>
+      <h2>Character Gallery</h2>
       <div className={styles.gridContainer}>
         {characters.map((character) => (
           <div key={character.id} className={styles.card}>
-            <Link to={`/character/${character.id}`} target="_blank">
               <img src={character.image} alt={character.name} />
-              <h3>{character.name}</h3>
-              <p>Species: {character.species}</p>
-              <p>Status: {character.status}</p>
+              <h3 className={styles.text}>{character.name}</h3>
+              <div className={styles.text}>Species: {character.species}</div>
+              <div className={styles.text}>Status: {character.status}</div>
+            <Link to={`/character/${character.id}`} target="_blank">
+            view details
             </Link>
           </div>
         ))}

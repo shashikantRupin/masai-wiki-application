@@ -1,11 +1,5 @@
 /* styles.css */
-h1 {
-  text-align: center;
-  padding: 1rem;
-  background-color: #282c34;
-  color: white;
-  margin: 0;
-}
+
 
 .gridContainer {
   display: grid;
@@ -26,6 +20,7 @@ h1 {
   width: 100%;
   max-width: 300px;
   transition: transform 0.2s;
+  padding: 1rem;
 }
 
 .card:hover {
@@ -37,13 +32,12 @@ h1 {
   height: auto;
 }
 
-.card h3 {
-  margin: 0.5rem 0 0;
+.text{
+  text-decoration: none !important;
+  line-height: 23px;
 }
 
-.card p {
-  margin: 0.25rem 0;
-}
+
 
 .pagination {
   display: flex;

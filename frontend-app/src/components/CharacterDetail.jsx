@@ -28,6 +28,7 @@ const CharacterDetail = () => {
 
   return (
     <div className={styles.detailContainer}>
+      <h2>Character Details</h2>
       <div className={styles.detailCard}>
         <div className={styles.imgContainer}>
           <img
